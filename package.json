@@ -14,7 +14,7 @@
     "build": "tsc",
     "build:clean": "rimraf dist",
     "build:watch": "npm run build -- -w",
-    "develop:watch": "concurrently 'npm run build:watch' 'npm run test:watch' .",
+    "develop:watch": "concurrently 'npm run build:watch' 'npm run test:watch'",
     "prepublish": "npm run build:clean && npm run typings:install && npm run test:lint && npm run build",
     "test": "npm run build && mocha --reporter dot --ui tdd dist/test/",
     "test:lint": "tslint --config tslint.json src/**/*.ts test/**.*.ts",
