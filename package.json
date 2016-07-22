@@ -1,0 +1,33 @@
+{
+  "name": "flaunt",
+  "version": "0.1.0",
+  "description": "Flask inspired framework",
+  "author": "Shane Logsdon <shane@shanelogsdon.com>",
+  "homepage": "https://github.com/slogsdon/flaunt",
+  "repository": {
+      "url": "https://github.com/slogsdon/flaunt.git",
+      "type": "git"
+  },
+  "license": "MIT",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "build:clean": "rimraf dist",
+    "build:watch": "npm run build -- -w",
+    "develop:watch": "concurrently 'npm run build:watch' 'npm run test:watch' .",
+    "prepublish": "npm run build:clean && npm run typings:install && npm run test:lint && npm run build",
+    "test": "npm run build && mocha --reporter dot --ui tdd dist/test/",
+    "test:lint": "tslint --config tslint.json src/**/*.ts test/**.*.ts",
+    "test:watch": "npm run test -- -w",
+    "typings:install": "typings install"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "concurrently": "^2.2.0",
+    "mocha": "^2.5.3",
+    "rimraf": "^2.5.3",
+    "tslint": "^3.13.0",
+    "typescript": "^1.8.10",
+    "typings": "^1.3.1"
+  }
+}
