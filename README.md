@@ -1,6 +1,8 @@
 # flaunt
 
-Flask inspired framework for Node.js
+[![Build Status](https://travis-ci.org/slogsdon/flaunt.svg?branch=master)](https://travis-ci.org/slogsdon/flaunt)
+
+> Flask inspired framework for Node.js
 
 ## Quick Start
 
