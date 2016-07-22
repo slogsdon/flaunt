@@ -3,7 +3,7 @@ import * as http from "http";
 import {IMiddleware} from "./Interfaces/IMiddleware";
 
 class Middleware {
-    public middleware: IMiddleware[];
+    public middleware: IMiddleware[] = [];
 
     public use(fn: IMiddleware) {
         this.middleware.push(fn);
